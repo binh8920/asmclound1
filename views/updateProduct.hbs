@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Update product</title>
+</head>
+<body>
+<div class="container pt-3">
+    {{#each products }}  
+    <form action="/doUpdate" method="post">
+         <input type="hidden" value="{{ _id }}" name="id">
+    
+        <div class="input-group-prepend">
+            <span class="input-group-text">Name of products: </span>
+        </div>
+        <input type="text" class="form-control" name="txtName" value="{{ name }}" id="">
+        <br>
+        <div class="input-group-prepend">
+            <span class="input-group-text">Price of products: </span>
+        </div>
+        <input type="number" class="form-control" name="txtPrice" value="{{ price }}" id="">
+        <br>
+        <div class="input-group-prepend">
+            <span class="input-group-text">Quantity of products: </span>
+        </div>
+        <input type="number" class="form-control" name="txtQuantity" value="{{ quantity }}" id="">
+        <br>
+        {{!-- <div class="input-group-prepend">
+            <span class="input-group-text">Date of products: </span>
+        </div> --}}
+        {{!-- <input type="date" class="form-control" name="txtDate" value="{{ date }}" id=""> --}}
+        <br>
+        <input type="submit" value="Update">
+   
+    </form>
+     {{/each}}
+</div>
+</body>
+</html>
